@@ -4,7 +4,7 @@ class UserTest < ActiveSupport::TestCase
   test 'attributes (persistent)' do
     user = User.new
     assert_equal user.username, nil
-    assert_equal user.salted_password, nil
+    assert_equal user.password_digest, nil
     assert_equal user.email, nil
     assert_equal user.ref_owned_skins, nil
     assert_equal user.ref_wanted_skins, nil

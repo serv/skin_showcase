@@ -12,7 +12,15 @@ class AuthenticateControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should post /signup_post' do
-    post signup_post_url
-    assert_response :success
+    fake_password = Faker::Internet.password
+    params = {
+      user: {
+        email: Faker::Internet.email,
+        password: fake_password,
+        password_confirmation: fake_password
+      }
+    }
+    post signup_post_url, { params: params }
+    assert_redirected_to root_url
   end
 end

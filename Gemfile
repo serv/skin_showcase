@@ -38,6 +38,7 @@ group :development, :test do
 
   # Automated tests
   gem 'capybara', '~> 2.7', '>= 2.7.1'
+  gem 'faker', '~> 1.6', '>= 1.6.6'
 end
 
 group :development do
