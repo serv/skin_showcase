@@ -17,4 +17,4 @@
 /tmp
 
 # environment variables file
-config/environment_variables.yml
+.env

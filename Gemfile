@@ -41,6 +41,9 @@ group :development, :test do
   gem 'faker', '~> 1.6', '>= 1.6.6'
   gem 'shoulda', '~> 3.5'
   gem 'shoulda-matchers', '~> 2.0'
+
+  # Environment variables
+  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 end
 
 group :development do
