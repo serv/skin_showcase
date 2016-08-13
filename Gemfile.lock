@@ -38,11 +38,21 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (7.0.0)
+    bcrypt (3.1.10)
+    bcrypt (3.1.10-x86-mingw32)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (9.0.5)
+    capybara (2.7.1)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -54,6 +64,8 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
+    faker (1.6.6)
+      i18n (~> 0.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -125,6 +137,12 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    shoulda (3.5.0)
+      shoulda-context (~> 1.0, >= 1.0.1)
+      shoulda-matchers (>= 1.4.1, < 3.0)
+    shoulda-context (1.2.1)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
     sprockets (3.6.3)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -152,20 +170,27 @@ GEM
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
   x86-mingw32
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   byebug
+  capybara (~> 2.7, >= 2.7.1)
   coffee-rails (~> 4.1.0)
+  faker (~> 1.6, >= 1.6.6)
   jbuilder (~> 2.0)
   jquery-rails
   pg (~> 0.18.4)
   rails (= 5.0.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  shoulda (~> 3.5)
+  shoulda-matchers (~> 2.0)
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
