@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  should validate_presence_of(:email)
+  should validate_presence_of(:password)
+
   test 'attributes (persistent)' do
     user = User.new
     assert_equal user.username, nil
