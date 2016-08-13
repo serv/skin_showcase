@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   attr_accessor :password_confirmation
 
+  validates :username, presence: true, length: { minimum: 3, maximum: 24}
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
