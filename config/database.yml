@@ -9,11 +9,12 @@ default: &default
   pool: 5
   timeout: 5000
   encoding: unicode
-  username: <%= ENV["POSTGRES_USERNAME"] %>
+  username: postgres
   password: <%= ENV["POSTGRES_PASSWORD"] %>
 
 development:
   <<: *default
+  host: db
   database: skin_showcase_development
 
 
@@ -22,6 +23,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  host: db
   database: skin_showcase_test
 
 production:
