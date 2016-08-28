@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'signup', to: 'authenticate#signup'
   get 'signin', to: 'authenticate#signin'
   post 'signup_post', to: 'authenticate#signup_post'
+  post 'signin_post', to: 'authenticate#signin_post'
 end

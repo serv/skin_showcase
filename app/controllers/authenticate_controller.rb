@@ -4,6 +4,7 @@ class AuthenticateController < ApplicationController
   end
 
   def signin
+    @user = User.new
   end
 
   def signup_post
@@ -13,6 +14,18 @@ class AuthenticateController < ApplicationController
       redirect_to root_url
     else
       render 'signup'
+    end
+  end
+
+  def signin_post
+    user = User.find_by(username: user_params[:username])
+
+    if user && user.authenticate(user_params[:password])
+      log_in user
+      redirect_to root_path
+    else
+      flash[:error] = 'Failed to sign in. Please try again.'
+      render 'signin'
     end
   end
 
