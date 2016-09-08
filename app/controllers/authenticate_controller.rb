@@ -36,6 +36,11 @@ class AuthenticateController < ApplicationController
     end
   end
 
+  def sign_out
+    log_out if logged_in?
+    redirect_to root_url
+  end
+
   private
 
     def user_params
