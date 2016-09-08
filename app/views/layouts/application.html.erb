@@ -8,12 +8,29 @@
 </head>
 <body>
   <div class='container'>
-    <div class='row'>
-      <div class="twelve columns nav-header">
+    <div class='row nav-header'>
+      <div class="three columns">
         <h1>
           <%= link_to 'SkinShowcase', root_url %>
         </h1>
       </div>
+
+      <%- if logged_in? %>
+        <div class="eight columns">
+        </div>
+        <div class="one columns">
+          <%= link_to 'Sign out', sign_out_path, method: :delete %>
+        </div>
+      <% else %>
+        <div class="seven columns">
+        </div>
+        <div class="one columns">
+          <%= link_to 'Sign up', signup_url %>
+        </div>
+        <div class="one columns">
+          <%= link_to 'Sign in', signin_url %>
+        </div>
+      <% end %>
     </div>
     <div class='row'>
       <div class="twelve columns">
