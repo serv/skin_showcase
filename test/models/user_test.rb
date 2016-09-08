@@ -20,5 +20,6 @@ class UserTest < ActiveSupport::TestCase
   test 'attributes (transient)' do
     user = User.new
     assert_equal user.password_confirmation, nil
+    assert_equal user.username_or_email, nil
   end
 end

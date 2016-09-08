@@ -12,16 +12,29 @@ class AuthenticateControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should post /signup_post' do
-    fake_password = Faker::Internet.password
+    create_user
+    assert_redirected_to root_url
+  end
+
+  test 'should post /signin_post with username' do
+    user_params = create_user
     params = {
       user: {
-        username: Faker::Internet.user_name,
-        email: Faker::Internet.email,
-        password: fake_password,
-        password_confirmation: fake_password
+        username_or_email: user_params[:username],
+        password: user_params[:password]
       }
     }
-    post signup_post_url, { params: params }
+    assert_redirected_to root_url
+  end
+
+  test 'should post /signin_post with email' do
+    user_params = create_user
+    params = {
+      user: {
+        username_or_email: user_params[:email],
+        password: user_params[:password]
+      }
+    }
     assert_redirected_to root_url
   end
 end
