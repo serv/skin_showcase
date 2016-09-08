@@ -1,8 +1,8 @@
 <h1>Sign in</h1>
 
 <%= form_for @user, url: signin_post_url do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+  <%= f.label :username, 'Username or Email' %>
+  <%= f.text_field :username_or_email %>
   <%= f.label :password %>
   <%= f.password_field :password %>
   <%= f.submit 'Submit' %>

@@ -19,7 +19,13 @@ class AuthenticateController < ApplicationController
   end
 
   def signin_post
-    user = User.find_by(username: user_params[:username])
+    user = nil
+
+    if EmailValidator.valid?(user_params[:username_or_email])
+      user = User.find_by(email: user_params[:username_or_email])
+    else
+      user = User.find_by(username: user_params[:username_or_email])
+    end
 
     if user && user.authenticate(user_params[:password])
       log_in user
@@ -34,6 +40,7 @@ class AuthenticateController < ApplicationController
 
     def user_params
       params.require(:user).permit(:username,
+                                   :username_or_email,
                                    :email,
                                    :password,
                                    :password_confirmation)
