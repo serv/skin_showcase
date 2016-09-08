@@ -19,9 +19,22 @@ $ bin/rails db:migrate
 
 ### Docker
 
+Use of docker is strongly advised in order to have a consistent
+development and test environment.
+
 1. [Install Docker](https://docs.docker.com/)
 2. Go to the project folder
 3. `$ docker-compose build`
 4. `$ docker-compose up`
 5. `$ docker-compose run web rails db:create`
 6. `$ docker-compose run web rails db:migrate`
+
+### Run tests using docker
+
+```
+# Prepare test DB
+$ docker-compose run -e "RAILS_ENV=test" web rake db:create db:migrate
+
+# Run the tests in docker
+docker-compose run -e "RAILS_ENV=test" web rake test
+```
