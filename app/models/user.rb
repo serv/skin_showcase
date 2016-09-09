@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  attr_accessor :password_confirmation, :username_or_email
+  attr_accessor :password_confirmation, :username_or_email, :email_confirmation
 
   validates :username, presence: true, length: { minimum: 3, maximum: 24}
   validates :email, presence: true, length: { maximum: 255 },

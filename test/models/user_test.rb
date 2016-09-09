@@ -21,5 +21,6 @@ class UserTest < ActiveSupport::TestCase
     user = User.new
     assert_equal user.password_confirmation, nil
     assert_equal user.username_or_email, nil
+    assert_equal user.email_confirmation, nil
   end
 end

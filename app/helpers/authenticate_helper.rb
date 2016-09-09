@@ -28,4 +28,11 @@ module AuthenticateHelper
   def logged_in?
     !current_user.nil?
   end
+
+  def filter_require_login
+    unless logged_in?
+      flash[:error] = 'Please sign in first.'
+      redirect_to signin_path
+    end
+  end
 end

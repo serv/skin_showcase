@@ -1,0 +1,26 @@
+<div class='row'>
+  <div class="two columns">
+    <ul>
+      <li><%= link_to 'Account', settings_url %></li>
+      <li><%= link_to 'Password', settings_password_url %></li>
+      <li><%= link_to 'Email notifications', '#' %></li>
+    </ul>
+  </div>
+  <div class="ten columns">
+    <h1>Settings</h1>
+    <ul>
+      <li><%= current_user.username %></li>
+      <li><%= current_user.email %></li>
+      <li>Signed up <%= time_ago_in_words(current_user.created_at) %></li>
+    </ul>
+
+    <h2>Change Email</h2>
+    <%= form_for @user, url: settings_email_url, method: :put do |f| %>
+      <%= f.label :email, 'New email' %>
+      <%= f.text_field :email %>
+      <%= f.label :email_confirmation, 'New email confirmation' %>
+      <%= f.text_field :email_confirmation %>
+      <%= f.submit 'Submit' %>
+    <% end %>
+  </div>
+</div>

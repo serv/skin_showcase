@@ -39,4 +39,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Ensure that vendor assets are loaded
+  # http://stackoverflow.com/questions/10992893/rails-asset-pipeline-tests-pass-production-broken
+  config.assets.compile = false
+  config.assets.digest = true
 end
