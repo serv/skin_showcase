@@ -16,8 +16,11 @@
       </div>
 
       <%- if logged_in? %>
-        <div class="seven columns">
+        <div class="six columns">
           -
+        </div>
+        <div class="one columns">
+          <%= link_to 'Profile', profile_url %>
         </div>
         <div class="one columns">
           <%= link_to 'Settings', settings_url %>

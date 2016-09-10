@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   put '/settings/email', to: 'settings#put_email'
   get '/settings/password', to: 'settings#password'
   put '/settings/password', to: 'settings#change_password'
+
+  get '/profile', to: 'profile#index'
 end
