@@ -16,13 +16,18 @@
       </div>
 
       <%- if logged_in? %>
-        <div class="eight columns">
+        <div class="seven columns">
+          -
         </div>
         <div class="one columns">
-          <%= link_to 'Sign out', sign_out_path, method: :delete %>
+          <%= link_to 'Settings', settings_url %>
+        </div>
+        <div class="one columns">
+          <%= link_to 'Sign out', sign_out_url, method: :delete %>
         </div>
       <% else %>
         <div class="seven columns">
+          -
         </div>
         <div class="one columns">
           <%= link_to 'Sign up', signup_url %>
