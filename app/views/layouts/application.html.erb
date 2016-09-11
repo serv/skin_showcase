@@ -42,5 +42,34 @@
       </div>
     </div>
   </div>
+  <div class='footer'>
+    <div class='container footer-content'>
+      <div class='row'>
+        <div class="two columns">
+          <%= link_to 'SkinShowcase', root_url, class: 'logo-small' %>
+        </div>
+        <div class="eight columns">
+        </div>
+        <div class="one columns">
+          <%= link_to 'About', about_url %>
+        </div>
+        <div class="one columns">
+          <%= link_to 'Contact', contact_url %>
+        </div>
+      </div>
+      <div class='row footer-fineprint center-text'>
+        <div class="twelve columns">
+          <p>
+            Use of this site constitutes acceptance of our
+            <%= link_to 'User Agreement', user_agreement_url %>
+            and
+            <%= link_to 'Privacy', privacy_url %>.
+            <br />
+            © 2016 Meanbean. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -8,5 +8,23 @@
 }
 
 .logo {
-  font-size: 2em;
+  font-size: xx-large;
+}
+
+.logo-small {
+  font-size: x-large;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 10px;
+  .footer-content {
+    padding-top: 10px;
+    border-top: 1px black solid;
+  }
+  .footer-fineprint {
+    font-size: x-small;
+  }
 }
