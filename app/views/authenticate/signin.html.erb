@@ -1,9 +1,17 @@
-<h1>Sign in</h1>
+<div class='row'>
+  <div class="twelve columns">
+    <h1>Sign in</h1>
 
-<%= form_for @user, url: signin_post_url do |f| %>
-  <%= f.label :username, 'Username or Email' %>
-  <%= f.text_field :username_or_email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit 'Submit' %>
-<% end %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "flash-#{name}" %>
+    <% end %>
+
+    <%= form_for @user, url: signin_post_url do |f| %>
+      <%= f.label :username, 'Username or Email' %>
+      <%= f.text_field :username_or_email, class: 'u-full-width' %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'u-full-width' %>
+      <%= f.submit 'Submit' %>
+    <% end %>
+  </div>
+</div>

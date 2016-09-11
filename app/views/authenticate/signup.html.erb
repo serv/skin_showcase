@@ -1,13 +1,21 @@
-<h1>Sign up</h1>
+<div class='row'>
+  <div class="twelve columns">
+    <h1>Sign up</h1>
 
-<%= form_for @user, url: signup_post_url do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit 'Submit' %>
-<% end %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "flash-#{name}" %>
+    <% end %>
+
+    <%= form_for @user, url: signup_post_url do |f| %>
+      <%= f.label :username %>
+      <%= f.text_field :username, class: 'u-full-width' %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'u-full-width' %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'u-full-width' %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: 'u-full-width' %>
+      <%= f.submit 'Submit' %>
+    <% end %>
+  </div>
+</div>

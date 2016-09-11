@@ -1,3 +1,21 @@
 .nav-header {
   border-bottom: 1px black solid;
 }
+
+// flashs
+.flash-error {
+  display: block;
+  width: 100%;
+  border: 1px solid red;
+}
+
+// forms
+label {
+  display: block;
+}
+
+// utils
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box;
+}

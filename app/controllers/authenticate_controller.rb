@@ -14,24 +14,24 @@ class AuthenticateController < ApplicationController
       log_in @user
       redirect_to root_url
     else
+      flash.now[:error] = 'Failed to sign up. Please try again.'
       render 'signup'
     end
   end
 
   def signin_post
-    user = nil
-
     if EmailValidator.valid?(user_params[:username_or_email])
-      user = User.find_by(email: user_params[:username_or_email])
+      @user = User.find_by(email: user_params[:username_or_email])
     else
-      user = User.find_by(username: user_params[:username_or_email])
+      @user = User.find_by(username: user_params[:username_or_email])
     end
 
-    if user && user.authenticate(user_params[:password])
-      log_in user
+    if @user && @user.authenticate(user_params[:password])
+      log_in @user
       redirect_to root_path
     else
-      flash[:error] = 'Failed to sign in. Please try again.'
+      @user = User.new
+      flash.now[:error] = 'Failed to sign in. Please try again.'
       render 'signin'
     end
   end
