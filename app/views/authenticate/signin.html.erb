@@ -9,6 +9,20 @@
       <%= f.text_field :username_or_email, class: 'u-full-width' %>
       <%= f.label :password %>
       <%= f.password_field :password, class: 'u-full-width' %>
+
+      <div class='row'>
+        <div class="six columns">
+          <%= f.label :remember_me do %>
+            <%= f.check_box :remember_me %>
+            <span>Remember me on this computer</span>
+          <% end %>
+        </div>
+        <div class="six columns">
+          <!-- TODO: Recover password -->
+          <p class='text-right'><%= link_to 'Recover password', '#' %></p>
+        </div>
+      </div>
+
       <%= f.submit 'Submit' %>
     <% end %>
   </div>
