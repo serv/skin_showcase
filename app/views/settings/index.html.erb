@@ -15,11 +15,14 @@
     </ul>
 
     <h2>Change Email</h2>
-    <%= form_for @user, url: settings_email_url, method: :put do |f| %>
+
+    <%= render partial: 'layouts/partials/flash', locals: { flash: flash } %>
+
+    <%= form_for current_user, url: settings_email_url, method: :put do |f| %>
       <%= f.label :email, 'New email' %>
-      <%= f.text_field :email %>
+      <%= f.text_field :email, class: 'u-full-width' %>
       <%= f.label :email_confirmation, 'New email confirmation' %>
-      <%= f.text_field :email_confirmation %>
+      <%= f.text_field :email_confirmation, class: 'u-full-width' %>
       <%= f.submit 'Submit' %>
     <% end %>
   </div>
