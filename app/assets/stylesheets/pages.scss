@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+
 .nav-header {
   padding: 10px 0;
   border-bottom: 1px black solid;
@@ -16,8 +26,6 @@
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   margin-bottom: 10px;
   .footer-content {
