@@ -29,3 +29,17 @@ test:
 production:
   <<: *default
   database: skin_showcase_production
+
+# For non-docker config
+# default: &default
+#   adapter: postgresql
+#   pool: 5
+#   timeout: 5000
+#   encoding: unicode
+#   username: jasonkim
+#   # password: <%= ENV["POSTGRES_PASSWORD"] %>
+#
+# development:
+#   <<: *default
+#   host: localhost
+#   database: skin_showcase_development

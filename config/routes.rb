@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   put '/settings/password', to: 'settings#change_password'
 
   get '/profile', to: 'profile#index'
+
+  get '/champions', to: 'champions#index'
 end

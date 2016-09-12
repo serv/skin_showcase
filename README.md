@@ -28,6 +28,7 @@ development and test environment.
 4. `$ docker-compose up`
 5. `$ docker-compose run web rails db:create`
 6. `$ docker-compose run web rails db:migrate`
+7. `$ docker-compose run web rails db:seed`
 
 ### Run tests using docker
 
@@ -37,4 +38,14 @@ $ docker-compose run -e "RAILS_ENV=test" web rake db:create db:migrate
 
 # Run the tests in docker
 docker-compose run -e "RAILS_ENV=test" web rake test
+```
+
+### Useful rake tasks
+
+```
+# Populate champions
+$ docker-compose run web rails model:populate_champions
+
+# Delete champions
+$ docker-compose run web rails model:delete_champions
 ```
