@@ -1,0 +1,13 @@
+<div class='row'>
+  <div class="twelve columns">
+    <div class='champion-header'>
+      <div class='champion-header-name'>
+        <h1><%= @champion.name %></h1>
+        <p><%= @champion.title %></p>
+      </div>
+      <div class='champion-header-image'>
+        <%= image_tag(@champion.tile_img_url, alt: @champion.name) %>
+      </div>
+    </div>
+  </div>
+</div>

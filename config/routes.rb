@@ -20,5 +20,5 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'profile#index'
 
-  get '/champions', to: 'champions#index'
+  resources :champions, only: [:index, :show]
 end

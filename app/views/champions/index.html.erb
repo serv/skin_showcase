@@ -9,7 +9,7 @@
             <%= image_tag(champion.tile_img_url, alt: champion.name) %>
           </div>
           <div class='champion-tile-name text-center text-bold'>
-            <%= champion.name %>
+            <%= link_to champion.name, champion_url(champion) %>
           </div>
         </div>
       <% end %>
