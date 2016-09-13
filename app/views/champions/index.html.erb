@@ -2,8 +2,17 @@
   <div class="twelve columns">
     <h1>Champions</h1>
 
-    <%- @champions.each do |champion| %>
-      <p><%= champion.inspect %></p>
-    <% end %>
+    <div class='champion-tiles'>
+      <%- @champions.each do |champion| %>
+        <div class='champion-tile'>
+          <div class='champion-tile-img'>
+            <%= image_tag(champion.tile_img_url, alt: champion.name) %>
+          </div>
+          <div class='champion-tile-name text-center text-bold'>
+            <%= champion.name %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
