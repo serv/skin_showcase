@@ -48,4 +48,10 @@ $ docker-compose run web rails model:populate_champions
 
 # Delete champions
 $ docker-compose run web rails model:delete_champions
+
+# Populate skins
+$ docker-compose run web rails model:populate_skins
+
+# Delete skins
+$ docker-compose run web rails model:delete_skins
 ```

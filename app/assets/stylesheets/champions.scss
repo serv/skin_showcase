@@ -7,12 +7,10 @@
   width: 5px + 120px + 5px;
   margin-bottom: 10px;
 }
-
 .champion-tile-img {
   float: left;
   padding: 5px;
 }
-
 .champion-tile-name {
   float: left;
   padding: 0 5px;
@@ -27,4 +25,17 @@
 }
 .champion-header-image {
   float: right;
+}
+
+.champion-skins {
+  width: 100%;
+}
+.champion-skin {
+  float: left;
+}
+.champion-skin-img {
+  float: left;
+}
+.champion-skin-name {
+  float: left;
 }

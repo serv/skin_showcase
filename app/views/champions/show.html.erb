@@ -9,5 +9,18 @@
         <%= image_tag(@champion.tile_img_url, alt: @champion.name) %>
       </div>
     </div>
+
+    <div class='champion-skins'>
+      <%- @champion.skins.each do |skin| %>
+        <div class='champion-skin'>
+          <div class='champion-skin-img'>
+            <%= link_to image_tag(skin.loading_img_url, alt: skin.name), '#' %>
+          </div>
+          <div class='champion-skin-name'>
+            <%= link_to skin.name, '#' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -6,7 +6,7 @@
       <%- @champions.each do |champion| %>
         <div class='champion-tile'>
           <div class='champion-tile-img'>
-            <%= image_tag(champion.tile_img_url, alt: champion.name) %>
+            <%= link_to image_tag(champion.tile_img_url, alt: champion.name), champion_url(champion) %>
           </div>
           <div class='champion-tile-name text-center text-bold'>
             <%= link_to champion.name, champion_url(champion) %>
