@@ -15,13 +15,19 @@
     </div>
   </div>
   <div class='skin-review-footer'>
-    <div class='skin-review-footer-helpful'>
-      <!-- TODO: helpful -->
-      x of y people found this helpful! Did you find this helpful?
-    </div>
-    <div class='skin-review-footer-report'>
-      <!-- TODO: report -->
-      Report
-    </div>
+    <%- if review.user == current_user %>
+      <%= link_to 'Edit', edit_review_path(review) %>
+      |
+      <%= link_to 'Delete', review_path(review), method: :DELETE %>
+    <% else %>
+      <div class='skin-review-footer-helpful'>
+        <!-- TODO: helpful -->
+        x of y people found this helpful! Did you find this helpful?
+      </div>
+      <div class='skin-review-footer-report'>
+        <!-- TODO: report -->
+        Report
+      </div>
+    <% end %>
   </div>
 </div>

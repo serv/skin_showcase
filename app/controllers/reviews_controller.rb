@@ -1,6 +1,21 @@
 class ReviewsController < ApplicationController
   before_action :require_login
 
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+
+    if @review.update_attributes!(review_params)
+      redirect_to skin_url(@review.skin)
+    else
+      flash.now[:error] = 'Failed to update review. Please try again.'
+      render 'edit'
+    end
+  end
+
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
@@ -11,6 +26,12 @@ class ReviewsController < ApplicationController
       flash.now[:error] = 'Failed to create review. Please try again.'
       render 'skins/show'
     end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to root_path
   end
 
   private
