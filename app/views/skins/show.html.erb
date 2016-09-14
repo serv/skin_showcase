@@ -1,0 +1,20 @@
+<div class='row'>
+  <div class="twelve columns">
+    <%= render 'layouts/partials/champion_header' %>
+  </div>
+</div>
+<div class='row'>
+  <div class="twelve columns">
+    <div class="skin-body">
+      <div class="skin-body-left">
+        <div class="skin-body-left-image">
+          <%= image_tag(@skin.loading_img_url, alt: @skin.name, width: '260px') %>
+        </div>
+      </div>
+      <div class="skin-body-right">
+        <!-- TODO: Reviews and comments -->
+        <h1>Reviews</h1>
+      </div>
+    </div>
+  </div>
+</div>

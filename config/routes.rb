@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   get '/profile', to: 'profile#index'
 
   resources :champions, only: [:index, :show]
+  resources :skins, only: [:show]
 end

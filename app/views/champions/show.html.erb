@@ -1,23 +1,15 @@
 <div class='row'>
   <div class="twelve columns">
-    <div class='champion-header'>
-      <div class="champion-header-image">
-        <%= image_tag(@champion.tile_img_url, alt: @champion.name) %>
-      </div>
-      <div class="champion-header-name">
-        <div class="champion-header-name-name text-bold"><%= @champion.name %></div>
-        <div class="champion-header-name-title"><%= @champion.title %></div>
-      </div>
-    </div>
+    <%= render 'layouts/partials/champion_header' %>
 
     <div class='champion-skins'>
       <%- @champion.skins.each do |skin| %>
         <div class='champion-skin'>
           <div class='champion-skin-img'>
-            <%= link_to image_tag(skin.loading_img_url, alt: skin.name, width: '260px'), '#' %>
+            <%= link_to image_tag(skin.loading_img_url, alt: skin.name, width: '260px'), skin_url(skin.id) %>
           </div>
           <div class='champion-skin-name text-center text-bold'>
-            <%= link_to skin.name, '#' %>
+            <%= link_to skin.name, skin_url(skin.id) %>
           </div>
         </div>
       <% end %>

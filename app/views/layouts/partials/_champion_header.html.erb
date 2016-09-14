@@ -1,0 +1,11 @@
+<div class='champion-header'>
+  <div class="champion-header-image">
+    <%= link_to image_tag(@champion.tile_img_url, alt: @champion.name), champion_url(@champion) %>
+  </div>
+  <div class="champion-header-name">
+    <div class="champion-header-name-name text-bold">
+      <%= link_to @champion.name, champion_url(@champion) %>
+    </div>
+    <div class="champion-header-name-title"><%= @champion.title %></div>
+  </div>
+</div>
