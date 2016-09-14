@@ -18,13 +18,24 @@
 }
 
 .champion-header {
+  position: relative;
+  margin-bottom: 10px;
+  height: 120px;
   width: 100%;
-}
-.champion-header-name {
-  float: left;
-}
-.champion-header-image {
-  float: right;
+  .champion-header-name {
+    margin-left: 120px + 10px;
+    .champion-header-name-name {
+      padding: 20px 0 10px 0;
+      font-size: x-large;
+    }
+    .champion-header-name-title {
+    }
+  }
+  .champion-header-image {
+    position: absolute;
+    left: 0;
+    width: 120px;
+  }
 }
 
 .champion-skins {
@@ -32,10 +43,15 @@
 }
 .champion-skin {
   float: left;
+  margin-bottom: 25px;
+  width: 5px + 260px + 5px;
 }
 .champion-skin-img {
   float: left;
+  width: 260px;
+  padding: 0 10px 10px 0;
 }
 .champion-skin-name {
   float: left;
+  width: 100%;
 }

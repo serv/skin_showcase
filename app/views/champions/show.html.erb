@@ -1,12 +1,12 @@
 <div class='row'>
   <div class="twelve columns">
     <div class='champion-header'>
-      <div class='champion-header-name'>
-        <h1><%= @champion.name %></h1>
-        <p><%= @champion.title %></p>
-      </div>
-      <div class='champion-header-image'>
+      <div class="champion-header-image">
         <%= image_tag(@champion.tile_img_url, alt: @champion.name) %>
+      </div>
+      <div class="champion-header-name">
+        <div class="champion-header-name-name text-bold"><%= @champion.name %></div>
+        <div class="champion-header-name-title"><%= @champion.title %></div>
       </div>
     </div>
 
@@ -14,9 +14,9 @@
       <%- @champion.skins.each do |skin| %>
         <div class='champion-skin'>
           <div class='champion-skin-img'>
-            <%= link_to image_tag(skin.loading_img_url, alt: skin.name), '#' %>
+            <%= link_to image_tag(skin.loading_img_url, alt: skin.name, width: '260px'), '#' %>
           </div>
-          <div class='champion-skin-name'>
+          <div class='champion-skin-name text-center text-bold'>
             <%= link_to skin.name, '#' %>
           </div>
         </div>
