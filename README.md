@@ -37,7 +37,7 @@ development and test environment.
 $ docker-compose run -e "RAILS_ENV=test" web rake db:create db:migrate
 
 # Run the tests in docker
-docker-compose run -e "RAILS_ENV=test" web rake test
+$ docker-compose run -e "RAILS_ENV=test" web rake test
 ```
 
 ### Useful rake tasks

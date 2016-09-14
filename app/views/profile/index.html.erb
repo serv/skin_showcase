@@ -7,3 +7,13 @@
     </ul>
   </div>
 </div>
+<div class='row'>
+  <div class="twelve columns">
+    <h1>Reviews</h1>
+    <%- @reviews.each do |review| %>
+      <%- if review.id %>
+        <%= render partial: 'layouts/partials/review', locals: { review: review } %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

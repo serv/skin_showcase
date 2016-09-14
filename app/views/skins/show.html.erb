@@ -12,8 +12,24 @@
         </div>
       </div>
       <div class="skin-body-right">
-        <!-- TODO: Reviews and comments -->
         <h1>Reviews</h1>
+
+        <%= render partial: 'layouts/partials/flash', locals: { flash: flash } %>
+
+        <%= form_for @review, url: reviews_path, method: :POST do |f| %>
+          <%= f.hidden_field :skin_id %>
+          <%= f.label :title, 'Title' %>
+          <%= f.text_field :title, class: 'u-full-width' %>
+          <%= f.label :long_form, 'Review' %>
+          <%= f.text_area :long_form, class: 'u-full-width' %>
+          <%= f.submit 'Submit' %>
+        <% end %>
+
+        <%- @reviews.each do |review| %>
+          <%- if review.id %>
+            <%= render partial: 'layouts/partials/review', locals: { review: review } %>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

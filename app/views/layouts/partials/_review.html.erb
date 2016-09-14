@@ -1,0 +1,27 @@
+<div class='skin-review'>
+  <div class='skin-review-header'>
+    <div class='skin-review-header-title text-bold'>
+      <%= review.title %>
+      <!-- TODO: ratings -->
+    </div>
+    <div class='skin-review-header-rating'></div>
+  </div>
+  <div class='skin-review-desc'>
+    by <%= review.user.username %> on <%= review.created_at.to_formatted_s(:long) %>
+  </div>
+  <div class='skin-review-body'>
+    <div class='skin-review-body-long-form'>
+      <%= review.long_form %>
+    </div>
+  </div>
+  <div class='skin-review-footer'>
+    <div class='skin-review-footer-helpful'>
+      <!-- TODO: helpful -->
+      x of y people found this helpful! Did you find this helpful?
+    </div>
+    <div class='skin-review-footer-report'>
+      <!-- TODO: report -->
+      Report
+    </div>
+  </div>
+</div>
