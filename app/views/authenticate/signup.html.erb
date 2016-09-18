@@ -13,7 +13,10 @@
       <%= f.password_field :password, class: 'u-full-width' %>
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: 'u-full-width' %>
-      <%= f.submit 'Submit' %>
+
+      <%= render partial: 'layouts/partials/recaptcha' %>
+
+      <%= f.submit 'Submit', class: 'signup-submit' %>
     <% end %>
   </div>
 </div>

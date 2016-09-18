@@ -10,6 +10,12 @@ class AuthenticateController < ApplicationController
   def signup_post
     @user = User.new(user_params)
 
+    unless verify_recaptcha?(params[:'g-recaptcha-response'], request.remote_ip)
+      flash.now[:error] = 'Failed to verify Recaptcha. Please try again.'
+      render 'signup'
+      return
+    end
+
     if @user.save
       log_in @user
       redirect_to root_url

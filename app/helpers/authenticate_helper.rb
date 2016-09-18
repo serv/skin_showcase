@@ -49,4 +49,17 @@ module AuthenticateHelper
       redirect_to signin_path
     end
   end
+
+  # TODO: error handling better
+  def verify_recaptcha?(g_recaptcha_response, remote_ip)
+    uri = URI('https://www.google.com/recaptcha/api/siteverify')
+    data = {
+      secret: '6LeRBAcUAAAAAA1mK5gFcIHjQlGkgpAccXT8sQqu',
+      response: g_recaptcha_response,
+      remoteip: remote_ip
+    }
+    res = Net::HTTP.post_form(uri, data)
+    success = JSON.parse(res.body)['success']
+    success == true
+  end
 end
