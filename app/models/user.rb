@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
 
   has_many :reviews
+  has_many :ratings
 
   has_secure_password
 
@@ -41,5 +42,12 @@ class User < ApplicationRecord
   # Forgets a user.
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def ratings_for(skin)
+    ratings.select do |r|
+      r.skin_id == skin.id
+    end
+      .first
   end
 end

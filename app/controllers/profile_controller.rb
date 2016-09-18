@@ -3,6 +3,7 @@ class ProfileController < ApplicationController
 
   def index
     @reviews = current_user.reviews
+    @ratings = current_user.ratings
   end
 
   private

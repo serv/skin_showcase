@@ -1,0 +1,20 @@
+// Place all the styles related to the ratings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.rating-stars {
+  height: 24px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.rating-star {
+  float: left;
+  width: 25px;
+  height: 24px;
+  cursor: pointer;
+  background: url('glyphicons-49-star-empty.png') no-repeat;
+}
+
+.rating-star-hover {
+  background: url('glyphicons-50-star.png') no-repeat;
+}

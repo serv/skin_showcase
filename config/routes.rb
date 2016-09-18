@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   resources :champions, only: [:index, :show]
   resources :skins, only: [:show]
   resources :reviews
+  resources :ratings
 end
