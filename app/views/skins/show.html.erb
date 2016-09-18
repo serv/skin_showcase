@@ -22,15 +22,17 @@
           <div class='rating-star sr-5'></div>
         </div>
 
-        <%= render partial: 'layouts/partials/flash', locals: { flash: flash } %>
+        <%- unless @review.id %>
+          <%= render partial: 'layouts/partials/flash', locals: { flash: flash } %>
 
-        <%= form_for @review, url: reviews_path, method: :POST do |f| %>
-          <%= f.hidden_field :skin_id %>
-          <%= f.label :title, 'Title' %>
-          <%= f.text_field :title, class: 'u-full-width' %>
-          <%= f.label :long_form, 'Review' %>
-          <%= f.text_area :long_form, class: 'u-full-width' %>
-          <%= f.submit 'Submit' %>
+          <%= form_for @review, url: reviews_path, method: :POST do |f| %>
+            <%= f.hidden_field :skin_id %>
+            <%= f.label :title, 'Title' %>
+            <%= f.text_field :title, class: 'u-full-width' %>
+            <%= f.label :long_form, 'Review' %>
+            <%= f.text_area :long_form, class: 'u-full-width' %>
+            <%= f.submit 'Submit' %>
+          <% end %>
         <% end %>
 
         <%- @reviews.each do |review| %>

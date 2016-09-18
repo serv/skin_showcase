@@ -17,6 +17,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    return if my_review_exists?
     @review = Review.new(review_params)
     @review.user_id = current_user.id
 
@@ -44,5 +45,9 @@ class ReviewsController < ApplicationController
 
     def require_login
       filter_require_login
+    end
+
+    def my_review_exists?
+      Review.find_by({ skin_id: review_params[:skin_id] })
     end
 end
