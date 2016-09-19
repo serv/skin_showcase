@@ -1,0 +1,29 @@
+// Place all the styles related to the helpfuls controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.skin-review-footer-helpful-blurb {
+  float: left;
+  margin-right: 5px;
+}
+.skin-review-footer-helpful-yes {
+  float: left;
+  width: 20px;
+  margin-right: 10px;
+  padding: 2px 6px;
+  border: 1px black solid;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.skin-review-footer-helpful-no {
+  float: left;
+  margin-right: 5px;
+  padding: 2px 6px;
+  border: 1px black solid;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.skin-review-footer-helpful-thankyou {
+  float: left;
+  margin-right: 5px;
+  color: green;
+}

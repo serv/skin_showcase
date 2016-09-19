@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function() {
   var Rating = function(object) {
-    this.number = parseInt(object.number);
+    this.number = parseInt(object.number, 10);
     this.skin_id = GLOBAL.skinId;
     this.$selector = object.selector;
   }

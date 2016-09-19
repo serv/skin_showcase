@@ -23,7 +23,19 @@
     <% else %>
       <div class='skin-review-footer-helpful'>
         <!-- TODO: helpful -->
-        x of y people found this helpful! Did you find this helpful?
+        <div class='skin-review-footer-helpful-blurb'>
+          <%= review.total_helpfuls.count %>
+          of
+          <%= review.total_up_helpfuls.count %>
+          people found this helpful! Did you find this helpful?
+        </div>
+        <div class='skin-review-footer-helpful-button skin-review-footer-helpful-yes'
+          data-review-id='<%= review.id %>' data-upvote='1'>Yes</div>
+        <div class='skin-review-footer-helpful-button skin-review-footer-helpful-no'
+          data-review-id='<%= review.id %>' data-upvote='0'>No</div>
+      </div>
+      <div class='skin-review-footer-helpful-thankyou hide'>
+        Thank you for your feedback.
       </div>
       <div class='skin-review-footer-report'>
         <!-- TODO: report -->

@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   resources :skins, only: [:show]
   resources :reviews
   resources :ratings
+  resources :helpfuls
 end

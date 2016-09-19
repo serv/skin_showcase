@@ -48,6 +48,6 @@ class ReviewsController < ApplicationController
     end
 
     def my_review_exists?
-      Review.find_by({ skin_id: review_params[:skin_id] })
+      Review.find_by({ skin_id: review_params[:skin_id], user_id: current_user.id })
     end
 end
