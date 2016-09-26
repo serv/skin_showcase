@@ -10,7 +10,9 @@
         <div class="skin-body-left-image">
           <%= image_tag(@skin.loading_img_url, alt: @skin.name, width: '260px') %>
         </div>
-        <%= render partial: 'layouts/partials/skin_ownit_wantit' %>
+        <%- unless @skin.default? %>
+          <%= render partial: 'layouts/partials/skin_ownit_wantit' %>
+        <% end %>
       </div>
       <div class="skin-body-right">
         <h1>Details</h1>
