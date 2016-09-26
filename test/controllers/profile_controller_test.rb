@@ -1,9 +1,8 @@
 require 'test_helper'
 
 class ProfileControllerTest < ActionDispatch::IntegrationTest
-  test 'should get /profile' do
-    user_params = create_user
+  test 'should be redirected when not signed in /profile' do
     get profile_url
-    assert_response :success
+    assert_redirected_to signin_path
   end
 end

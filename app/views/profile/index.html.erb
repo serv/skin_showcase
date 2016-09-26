@@ -25,3 +25,19 @@
     <% end %>
   </div>
 </div>
+<div class='row'>
+  <div class="twelve columns">
+    <h1>Owned Skins</h1>
+    <%- @ownits.each do |ownit| %>
+      <p><%= ownit.inspect %></p>
+    <% end %>
+  </div>
+</div>
+<div class='row'>
+  <div class="twelve columns">
+    <h1>Wanted Skins</h1>
+    <%- @wantits.each do |wantit| %>
+      <p><%= wantit.inspect %></p>
+    <% end %>
+  </div>
+</div>
