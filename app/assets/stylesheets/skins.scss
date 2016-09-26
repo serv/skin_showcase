@@ -5,13 +5,39 @@
 .skin-body {
   position: relative;
   width: 100%;
-  min-height: 480px;
+  height: 473px + 28px + 10px;
   .skin-body-left {
     position: absolute;
     left: 0;
     width: 260px;
+    height: 473px;
+    .skin-body-left-image {
+      width: 100%;
+      height: 100%;
+    }
   }
   .skin-body-right {
     margin-left: 280px;
+    height: 28px;
+  }
+}
+
+.skin-actionables {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+  .skin-actionables-ownit {
+    float: left;
+    padding: 5px 0;
+    width: 50%;
+    cursor: pointer;
+    background-color: #99FF99;
+  }
+  .skin-actionables-wantit {
+    float: left;
+    padding: 5px 0;
+    width: 50%;
+    cursor: pointer;
+    background-color: #FF9999;
   }
 }

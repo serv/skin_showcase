@@ -13,7 +13,7 @@ class AuthenticateControllerTest < ActionDispatch::IntegrationTest
 
   test 'should post /signup_post' do
     create_user
-    assert_redirected_to root_url
+    assert_response :success
   end
 
   test 'should post /signin_post with username' do
@@ -24,7 +24,7 @@ class AuthenticateControllerTest < ActionDispatch::IntegrationTest
         password: user_params[:password]
       }
     }
-    assert_redirected_to root_url
+    assert_response :success
   end
 
   test 'should post /signin_post with email' do
@@ -35,6 +35,6 @@ class AuthenticateControllerTest < ActionDispatch::IntegrationTest
         password: user_params[:password]
       }
     }
-    assert_redirected_to root_url
+    assert_response :success
   end
 end

@@ -10,8 +10,15 @@
         <div class="skin-body-left-image">
           <%= image_tag(@skin.loading_img_url, alt: @skin.name, width: '260px') %>
         </div>
+        <%= render partial: 'layouts/partials/skin_ownit_wantit' %>
       </div>
       <div class="skin-body-right">
+        <h1>Details</h1>
+
+        <ul>
+          <li>Name: <%= @skin.name %></li>
+        </ul>
+
         <h1>Reviews</h1>
 
         <div class='rating-stars'>
