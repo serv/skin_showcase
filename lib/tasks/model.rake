@@ -37,6 +37,9 @@ namespace :model do
           name: skin_json['name'],
           chromas: ActiveRecord::Type::Boolean.new.cast(skin_json['chromas'])
         }
+
+        skin_hash[:name] = 'Default' if skin_hash[:name] == 'default'
+
         skin = champion.skins.build(skin_hash)
         skin.save if !Skin.find_by(skin_id: skin.skin_id)
       end
