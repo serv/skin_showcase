@@ -2,6 +2,11 @@
   <div class="twelve columns">
     <h1>Sign up</h1>
 
+    <div class='riot-username-warning'>
+      Please do not use username or password associated with
+      League of Legends for security reasons.
+    </div>
+
     <%= render partial: 'layouts/partials/flash', locals: { flash: flash } %>
 
     <%= form_for @user, url: signup_post_url do |f| %>
