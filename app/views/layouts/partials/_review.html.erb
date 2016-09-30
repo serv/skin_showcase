@@ -9,6 +9,11 @@
   <div class='skin-review-desc'>
     by <%= review.user.username %> on <%= review.created_at.to_formatted_s(:long) %>
   </div>
+
+  <%- if review.rating %>
+    <%= review.rating.score %> / 5
+  <% end %>
+
   <div class='skin-review-body'>
     <div class='skin-review-body-long-form'>
       <%= review.long_form %>

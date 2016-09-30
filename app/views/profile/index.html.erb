@@ -11,6 +11,9 @@
   <div class="twelve columns">
     <h1>Reviews</h1>
     <%- @reviews.each do |review| %>
+      <%- if review.rating %>
+        <%= review.rating.inspect %>
+      <% end %>
       <%- if review.id %>
         <%= render partial: 'layouts/partials/review', locals: { review: review } %>
       <% end %>
