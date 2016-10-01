@@ -18,3 +18,19 @@
 .rating-star-hover {
   background: url('glyphicons-50-star.png') no-repeat;
 }
+
+.static-small-rating-stars {
+  height: 24px;
+  width: 100%;
+  margin-bottom: 5px;
+  .static-small-rating-star-empty {
+    float: left;
+    width: 25px;
+    height: 24px;
+    cursor: pointer;
+    background: url('glyphicons-49-star-empty.png') no-repeat;
+  }
+  .static-small-rating-star-empty.filled {
+    background: url('glyphicons-50-star.png') no-repeat;
+  }
+}
