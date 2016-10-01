@@ -9,13 +9,40 @@
 </div>
 <div class='row'>
   <div class="twelve columns">
-    <h1>Reviews</h1>
+    <h1>Reviews and Ratings</h1>
     <%- @reviews.each do |review| %>
-      <%- if review.rating %>
-        <%= review.rating.inspect %>
-      <% end %>
       <%- if review.id %>
-        <%= render partial: 'layouts/partials/review', locals: { review: review } %>
+        <div class='row'>
+          <div class='two columns'>
+            <%= link_to image_tag(review.skin.loading_img_url, alt: review.skin.name, width: '90%'), skin_path(review.skin) %>
+          </div>
+          <div class='ten columns'>
+            <%= render partial: 'layouts/partials/review', locals: { review: review } %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <%- @ratings.each do |rating| %>
+      <%- if rating.id && !rating.review_id %>
+
+        <div class='row'>
+          <div class='two columns'>
+            <%= link_to image_tag(rating.skin.loading_img_url, alt: rating.skin.name, width: '90%'), skin_path(rating.skin) %>
+          </div>
+          <div class='ten columns'>
+            <div class='static-small-rating-stars'>
+              <% rating.score.times do %>
+                <div class='static-small-rating-star-empty filled'></div>
+              <% end %>
+              <% (5 - rating.score).times do %>
+                <div class='static-small-rating-star-empty'></div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+
       <% end %>
     <% end %>
   </div>
