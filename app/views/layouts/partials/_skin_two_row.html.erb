@@ -1,0 +1,14 @@
+<%- if skin %>
+  <div class='two columns'>
+    <div class='row'>
+      <div class='twelve columns'>
+        <%= link_to image_tag(skin.loading_img_url, alt: skin.name, width: '90%'), skin_path(skin) %>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='twelve columns skin-two-row-name text-center'>
+        <%= link_to skin.name, skin_path(skin) %>
+      </div>
+    </div>
+  </div>
+<% end %>

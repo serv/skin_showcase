@@ -13,9 +13,7 @@
     <%- @reviews.each do |review| %>
       <%- if review.id %>
         <div class='row'>
-          <div class='two columns'>
-            <%= link_to image_tag(review.skin.loading_img_url, alt: review.skin.name, width: '90%'), skin_path(review.skin) %>
-          </div>
+          <%= render partial: 'layouts/partials/skin_two_row', locals: { skin: review.skin } %>
           <div class='ten columns'>
             <%= render partial: 'layouts/partials/review', locals: { review: review } %>
           </div>
@@ -27,9 +25,8 @@
       <%- if rating.id && !rating.review_id %>
 
         <div class='row'>
-          <div class='two columns'>
-            <%= link_to image_tag(rating.skin.loading_img_url, alt: rating.skin.name, width: '90%'), skin_path(rating.skin) %>
-          </div>
+          <%= render partial: 'layouts/partials/skin_two_row', locals: { skin: rating.skin } %>
+
           <div class='ten columns'>
             <div class='static-small-rating-stars'>
               <% rating.score.times do %>
@@ -41,8 +38,6 @@
             </div>
           </div>
         </div>
-
-
       <% end %>
     <% end %>
   </div>
@@ -50,16 +45,28 @@
 <div class='row'>
   <div class="twelve columns">
     <h1>Owned Skins</h1>
-    <%- @ownits.each do |ownit| %>
-      <p><%= ownit.inspect %></p>
+    <%- @ownits.each_with_index do |ownit, i| %>
+      <%- if (i + 1) % 6 == 0 %>
+        <div class='row'>
+      <% end %>
+          <%= render partial: 'layouts/partials/skin_two_row', locals: { skin: ownit.skin } %>
+      <%- if (i + 1) % 6 == 0 %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
 <div class='row'>
   <div class="twelve columns">
     <h1>Wanted Skins</h1>
-    <%- @wantits.each do |wantit| %>
-      <p><%= wantit.inspect %></p>
+    <%- @wantits.each_with_index do |wantit, i| %>
+      <%- if (i + 1) % 6 == 0 %>
+        <div class='row'>
+      <% end %>
+          <%= render partial: 'layouts/partials/skin_two_row', locals: { skin: wantit.skin } %>
+      <%- if (i + 1) % 6 == 0 %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
