@@ -52,4 +52,15 @@ namespace :model do
       skin.destroy
     end
   end
+
+  desc 'Create a test account'
+  task create_test_account: :environment do
+    test_account = {
+      username: 'temp',
+      email: 'temp@temp.com',
+      password: 'qweqwe',
+      password_confirmation: 'qweqwe'
+    }
+    User.new(test_account).save
+  end
 end

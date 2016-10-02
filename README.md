@@ -54,4 +54,7 @@ $ docker-compose run web rails model:populate_skins
 
 # Delete skins
 $ docker-compose run web rails model:delete_skins
+
+# Create a test account
+$ docker-compose run web rails model:create_test_account
 ```
