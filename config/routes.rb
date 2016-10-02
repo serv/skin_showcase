@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   resources :helpfuls
   resources :ownits
   resources :wantits
+  resources :search
 end
