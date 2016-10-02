@@ -13,7 +13,7 @@
     <%- @reviews.each do |review| %>
       <%- if review.id %>
         <div class='row'>
-          <%= render partial: 'layouts/partials/skin_two_row', locals: { skin: review.skin } %>
+          <%= render partial: 'layouts/partials/skin_instance', locals: { skin: review.skin } %>
           <div class='ten columns'>
             <%= render partial: 'layouts/partials/review', locals: { review: review } %>
           </div>
@@ -25,7 +25,7 @@
       <%- if rating.id && !rating.review_id %>
 
         <div class='row'>
-          <%= render partial: 'layouts/partials/skin_two_row', locals: { skin: rating.skin } %>
+          <%= render partial: 'layouts/partials/skin_instance', locals: { skin: rating.skin } %>
 
           <div class='ten columns'>
             <div class='static-small-rating-stars'>
@@ -49,7 +49,7 @@
       <%- if (i + 1) % 6 == 0 %>
         <div class='row'>
       <% end %>
-          <%= render partial: 'layouts/partials/skin_two_row', locals: { skin: ownit.skin } %>
+          <%= render partial: 'layouts/partials/skin_instance', locals: { skin: ownit.skin } %>
       <%- if (i + 1) % 6 == 0 %>
         </div>
       <% end %>
@@ -63,7 +63,7 @@
       <%- if (i + 1) % 6 == 0 %>
         <div class='row'>
       <% end %>
-          <%= render partial: 'layouts/partials/skin_two_row', locals: { skin: wantit.skin } %>
+          <%= render partial: 'layouts/partials/skin_instance', locals: { skin: wantit.skin } %>
       <%- if (i + 1) % 6 == 0 %>
         </div>
       <% end %>

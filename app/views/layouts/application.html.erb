@@ -15,9 +15,14 @@
       <div class='one columns'>
         <%= link_to 'Champions', champions_path %>
       </div>
+      <div class='two columns'>
+        <%= form_for Search.new, url: search_index_path, method: :POST, html: { class: 'nav-header-search' } do |f| %>
+          <%= f.text_field :content, placeholder: 'Search', value: @query %>
+        <% end %>
+      </div>
 
       <%- if logged_in? %>
-        <div class="five columns">
+        <div class="three columns">
         </div>
         <div class="one columns">
           <%= link_to 'Profile', profile_url %>
@@ -29,7 +34,7 @@
           <%= link_to 'Sign out', sign_out_url, method: :delete %>
         </div>
       <% else %>
-        <div class="six columns">
+        <div class="four columns">
         </div>
         <div class="one columns">
           <%= link_to 'Sign up', signup_url %>
