@@ -7,12 +7,14 @@ namespace :model do
     data_hash = JSON.parse(file)
     data_hash['data'].each do |key, value|
       champion_hash = {
-        name: value['id'],
+        original_id: value['id'],
+        url_id: value['id'].underscore,
+        name: value['id'].split(/(?=[A-Z])/).join(' '),
         key: value['key'],
         title: value['title']
       }
       champion = Champion.new(champion_hash)
-      champion.save if !Champion.find_by(name: champion.name)
+      champion.save if !Champion.find_by(original_id: champion.original_id)
     end
   end
 
@@ -27,9 +29,9 @@ namespace :model do
   desc 'Populate skins using db/raw/champion.json'
   task populate_skins: :environment do
     Champion.all.each do |champion|
-      champion_data = JSON.load(open("http://ddragon.leagueoflegends.com/cdn/6.18.1/data/en_US/champion/#{champion.name}.json"))
-
-      champion_data['data'][champion.name]['skins'].each do |skin_json|
+      champion_data = JSON.load(open("http://ddragon.leagueoflegends.com/cdn/6.18.1/data/en_US/champion/#{champion.original_id}.json"))
+      puts champion.inspect
+      champion_data['data'][champion.original_id]['skins'].each do |skin_json|
         skin_hash = {
           champion_id: champion.id,
           skin_num: skin_json['num'],

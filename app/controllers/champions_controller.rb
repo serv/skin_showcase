@@ -4,6 +4,6 @@ class ChampionsController < ApplicationController
   end
 
   def show
-    @champion = Champion.find(params[:id])
+    @champion = Champion.find_by(url_id: params[:url_id])
   end
 end
