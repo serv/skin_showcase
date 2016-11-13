@@ -33,7 +33,6 @@ $(document).on('turbolinks:load', function() {
       data: { wantit: { skin_id: self.skin_id } }
     })
       .done(function(msg) {
-        console.log("Data Saved: " + msg);
       });
   };
 
