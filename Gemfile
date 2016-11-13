@@ -6,6 +6,10 @@ ruby '2.2.4'
 gem 'rails', '5.0.0'
 # for postgresql adaptor
 gem 'pg', '~> 0.18.4'
+# Webserver
+gem 'puma', '~> 3.4'
+# Process manager for applications with multiple components
+gem 'foreman', '~> 0.82.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
