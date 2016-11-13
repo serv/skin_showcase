@@ -12,11 +12,11 @@
   width: 25px;
   height: 24px;
   cursor: pointer;
-  background: url('glyphicons-49-star-empty.png') no-repeat;
+  background: image-url('glyphicons-49-star-empty.png') no-repeat;
 }
 
 .rating-star-hover {
-  background: url('glyphicons-50-star.png') no-repeat;
+  background: image-url('glyphicons-50-star.png') no-repeat;
 }
 
 .static-small-rating-stars {
